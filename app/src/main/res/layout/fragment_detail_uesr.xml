@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="detail"
+            type="com.unicocoder.usergithub.model.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        tools:context=".ActivityRun">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/purple_700"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/detail_user_github"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/cir_detailItem_imageUser"
+            android:layout_width="144dp"
+            android:layout_height="144dp"
+            android:layout_marginTop="16dp"
+            android:show="@{detail.avatarUrl}"
+            android:transitionName="@string/hero_image"
+            app:civ_border_color="@color/purple_500"
+            app:civ_border_width="1dp"
+            app:civ_shadow="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:srcCompat="@drawable/ic_person"
+            tools:ignore="MissingConstraints"
+            tools:targetApi="lollipop" />
+
+        <TextView
+            android:id="@+id/tv_detailItem_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:text="@{detail.login}"
+            android:textColor="@color/colorBlueGrey700"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cir_detailItem_imageUser" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

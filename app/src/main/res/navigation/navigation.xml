@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@+id/ListUserFragment">
+
+    <fragment
+        android:id="@+id/ListUserFragment"
+        android:name="com.unicocoder.usergithub.view.fragment.ListUserFragment"
+        android:label="ListUserFragment">
+
+        <action
+            android:id="@+id/action_ListUserFragment_to_DetailUesrFragment"
+            app:destination="@id/DetailUesrFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/DetailUesrFragment"
+        android:name="com.unicocoder.usergithub.view.fragment.DetailUserFragment"
+        android:label="DetailUesrFragment">
+        <action
+            android:id="@+id/action_DetailUesrFragment_to_ListUserFragment"
+            app:destination="@id/ListUserFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+
+</navigation>
